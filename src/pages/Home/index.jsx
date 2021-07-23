@@ -1,18 +1,24 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { Button } from "../../components/Button";
-import { Container, Content } from "./styles";
-export const Home = () => {
+import { Container, Content, Icon } from "./styles";
+import { GiDuck } from "react-icons/gi";
+export const Home = ({ authenticated, setAuthenticated }) => {
   const history = useHistory();
   const handleNavigation = (path) => {
     history.push(path);
   };
+  if (authenticated) {
+    return <Redirect to="/dashboard" />;
+  }
+
   return (
     <Container>
       <Content>
-        <h1>
-          do<span>.</span>it
-        </h1>
-        <span>Organize Yourself Easily and Effectively</span>
+        <Icon>
+          <GiDuck />
+        </Icon>
+        <h1>kenzie-hub</h1>
+        <span>expose your learnings and projects</span>
         <div>
           <Button onClick={() => handleNavigation("/signup")} whiteSchema>
             Sign Up

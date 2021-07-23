@@ -1,12 +1,18 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 export const Container = styled.div`
   text-align: left;
+  div {
+    span {
+      color: var(--red);
+    }
+  }
 `;
 export const InputContainer = styled.div`
   background: var(--white);
   border-radius: 10px;
   border: 2px solid var(--gray);
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   display: flex;
   transition: 0.4s;
@@ -20,5 +26,9 @@ export const InputContainer = styled.div`
     &::placeholder {
       color: var(--gray);
     }
+  }
+
+  svg {
+    margin-right: 16px;
   }
 `;

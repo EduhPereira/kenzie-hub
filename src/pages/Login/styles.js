@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import SignupImage from "../../assets/sapiens1.svg";
+import SignupImage from "../../assets/sapiens2.svg";
 export const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -22,14 +22,14 @@ export const Content = styled.div`
   max-width: 700px;
 `;
 
-const appearFromRight = keyframes`
+const appearFromLeft = keyframes`
     from{
         opacity:0;
-        transform: translate(50px)
+        transform: translateX(-50px)
     }
     to{
         opacity: 1;
-        transform: translate(0px)
+        transform: translateX(0px)
     }
 `;
 
@@ -37,7 +37,7 @@ export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${appearFromRight} 1s;
+  animation: ${appearFromLeft} 1s;
 
   form {
     margin: 80px 0;
@@ -45,11 +45,11 @@ export const AnimationContainer = styled.div`
     text-align: center;
 
     h1 {
-      margin-bottom: 16px;
+      margin-bottom: 32px;
     }
 
     > div {
-      margin-top: 5px;
+      margin-top: 16px;
     }
 
     p {

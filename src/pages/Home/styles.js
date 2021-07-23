@@ -1,10 +1,24 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
+`;
+const appear = keyframes`
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+`;
+export const Icon = styled.div`
+  font-size: 75px;
+  display: flex;
+  justify-content: center;
+  animation: ${appear} 1s;
 `;
 export const Content = styled.div`
   max-width: 400px;
