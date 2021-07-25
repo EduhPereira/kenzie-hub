@@ -14,4 +14,4 @@
     <li>Kenzie Hub API: https://gitlab.com/ka-br-jan-2021/game-rank-api</li>
 </ul>
 <h2>How To Use</h2>
-<p>Access: https://do-it-alpha.vercel.app/</p>
+<p>Access: https://kenzie-hub-psi-orpin.vercel.app/</p>
