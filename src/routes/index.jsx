@@ -3,6 +3,8 @@ import { Home } from "../pages/Home";
 import { SignUp } from "../pages/SignUp";
 import { Login } from "../pages/Login";
 import { Dashboard } from "../pages/Dashboard";
+import { Profile } from "../pages/Profile";
+import { Techs } from "../pages/Techs";
 import { useEffect, useState } from "react";
 
 export const Routes = () => {
@@ -37,6 +39,18 @@ export const Routes = () => {
       </Route>
       <Route path="/dashboard">
         <Dashboard
+          authenticated={authenticated}
+          setAuthenticated={setAuthenticated}
+        />
+      </Route>
+      <Route path="/profile">
+        <Profile
+          authenticated={authenticated}
+          setAuthenticated={setAuthenticated}
+        />
+      </Route>
+      <Route path="/techs">
+        <Techs
           authenticated={authenticated}
           setAuthenticated={setAuthenticated}
         />

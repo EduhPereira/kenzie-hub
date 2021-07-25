@@ -1,27 +1,34 @@
-import { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { Header, Button, Container, Card } from "./styles";
 import { CgLogOff } from "react-icons/cg";
 import Profile from "../../assets/profile.svg";
 import Techs from "../../assets/techs.svg";
+import Projects from "../../assets/projects.svg";
 
 export const Dashboard = ({ authenticated, setAuthenticated }) => {
+  const history = useHistory();
+
   if (!authenticated) {
     return <Redirect to="/login" />;
   }
 
   const user = JSON.parse(localStorage.getItem("@KenzieHub:user"));
 
-  const logoff = () => {
+  const handleNavigation = (path) => {
+    history.push(path);
+  };
+
+  const handleLogoff = () => {
     localStorage.clear();
-    return <Redirect to="/login" />;
+    setAuthenticated(false);
+    history.push("/login");
   };
 
   return (
     <>
       <Header>
         <h1>{user.name}</h1>{" "}
-        <Button onClick={logoff}>
+        <Button onClick={handleLogoff}>
           <CgLogOff />
         </Button>
       </Header>
@@ -29,12 +36,14 @@ export const Dashboard = ({ authenticated, setAuthenticated }) => {
         <Card>
           <img src={Profile} alt="" />
           <h2>Profile</h2>
-          <Button>See More</Button>
+          <Button onClick={() => handleNavigation("/profile")}>See</Button>
         </Card>
         <Card>
-          <img src={Techs} alt="" />
-          <h2>Techs / Projects</h2>
-          <Button>See More</Button>
+          <img src={Projects} alt="" />
+          <h2>Techs</h2>
+          <Button onClick={() => handleNavigation("/techs")}>
+            Add / Remove
+          </Button>
         </Card>
       </Container>
     </>

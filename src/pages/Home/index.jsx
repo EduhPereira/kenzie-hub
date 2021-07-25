@@ -17,7 +17,7 @@ export const Home = ({ authenticated, setAuthenticated }) => {
         <Icon>
           <GiDuck />
         </Icon>
-        <h1>kenzie-hub</h1>
+        <h1>kenzie.hub</h1>
         <span>expose your learnings and projects</span>
         <div>
           <Button onClick={() => handleNavigation("/signup")} whiteSchema>

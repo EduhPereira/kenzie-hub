@@ -12,10 +12,7 @@ import { toast } from "react-toastify";
 export const Login = ({ authenticated, setAuthenticated }) => {
   const schema = yup.object().shape({
     email: yup.string().email("Invalid Email").required("Field Required"),
-    password: yup
-      .string()
-      .min(8, "Minimun of 8 digits")
-      .required("Field Required"),
+    password: yup.string().required("Field Required"),
   });
 
   const {

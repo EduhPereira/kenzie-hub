@@ -60,5 +60,20 @@ export const AnimationContainer = styled.div`
         color: var(--blue);
       }
     }
+
+    label {
+      display: flex;
+      margin: 8px 0 0 0;
+    }
+
+    select {
+      display: flex;
+      width: 100%;
+      padding: 8px;
+      margin: 0 0 10px 0;
+      border: 2px solid var(--gray);
+      border-radius: 10px;
+      font-family: "Roboto Mono", monospace;
+    }
   }
 `;

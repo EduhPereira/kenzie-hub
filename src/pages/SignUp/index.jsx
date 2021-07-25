@@ -122,14 +122,25 @@ export const SignUp = ({ authenticated, setAuthenticated }) => {
               placeholder="Social Media / Cellphone"
               error={errors.contact?.message}
             />
-            <Input
-              register={register}
+            <label htmlFor="course_module">Course Module</label>
+            <select
+              id="course_module"
               name="course_module"
-              icon={FiAward}
-              label="Course Module"
-              placeholder="Insert your course module"
-              error={errors.course_module?.message}
-            />
+              {...register("course_module")}
+            >
+              <option selected value="Primeiro módulo (Introdução ao Frontend)">
+                Primeiro módulo (Introdução ao Frontend)
+              </option>
+              <option value="Segundo módulo (Frontend Avançado)">
+                Segundo módulo (Frontend Avançado)
+              </option>
+              <option value="Terceiro módulo (Introdução ao Backend)">
+                Terceiro módulo (Introdução ao Backend)
+              </option>
+              <option value="Quarto módulo (Backend Avançado)">
+                Quarto módulo (Backend Avançado)
+              </option>
+            </select>
             <Button type="submit">Send</Button>
             <p>
               Already have an acount? <Link to="/login">Login</Link>

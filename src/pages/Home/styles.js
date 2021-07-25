@@ -16,6 +16,7 @@ const appear = keyframes`
 `;
 export const Icon = styled.div`
   font-size: 75px;
+  color: goldenrod;
   display: flex;
   justify-content: center;
   animation: ${appear} 1s;

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Header = styled.header`
   display: flex;
@@ -15,6 +15,16 @@ export const Header = styled.header`
   svg {
     font-size: 1.5rem;
   }
+
+  button {
+    margin-left: 15px;
+  }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0;
 `;
 
 export const Button = styled.button`
@@ -29,71 +39,59 @@ export const Button = styled.button`
   padding: 3px;
 `;
 
-export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 30px;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-`;
-
-const fromTop = keyframes`
-  from{
-    transform: translateY(-25px);
-    opacity:0;
-  }
-  to{
-    transform: translateY(0px);
-    opacity:1;
-  }
-`;
-
 export const Card = styled.div`
-  height: 400px;
-  width: 230px;
-  margin: 0;
+  min-height: 400px;
+  width: 85%;
+  max-width: 500px;
+  margin: 50px auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: none;
+  border: 1px solid var(--gray);
   border-radius: 5px;
-  background-color: #137ffb83;
+  background: rgb(236, 236, 236);
   color: var(--white);
-  transition: all 0.25s ease-in;
-  animation: ${fromTop} 1s linear;
 
   box-shadow: 12px 12px 14px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 12px 12px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 12px 12px 14px 0px rgba(0, 0, 0, 0.75);
 
-  :hover {
-    transform: scale(1.05);
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 10px;
+    font-weight: 700;
+  }
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #1b1b1b;
+  font-family: "Roboto Mono", monospace;
+
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    margin: 0 auto;
   }
 
   h2 {
-    font-size: 1.35rem;
+    font-size: 20px;
+    color: goldenrod;
+    margin: 10px 0;
   }
+`;
+export const Item = styled.div`
+  font-size: 1rem;
+  margin: 8px 0;
 
-  img {
-    height: 200px;
-  }
-
-  button {
-    background-color: var(--darkblue);
-    border: none;
-    padding: 5px;
-    width: 60%;
-    height: 30px;
-    font-weight: 700;
-    margin: 15px 0 0 0;
-    transition: 0.3s linear;
-
-    :hover {
-      background-color: var(--blue);
-    }
+  span {
+    font-weight: 900;
   }
 `;
